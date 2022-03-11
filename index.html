@@ -17,35 +17,35 @@
 <title class="title">clement</title>
 
 </head>
-<body>
-    <!---show title up top, add css to center when load-->
-    <header>
-        <h1>
-            clement
-        </h1>
+<body class="flex-column min-100-vh success">
+    <header class="hero">
+      <h1 class="app-title text-center">clement</h1>
     </header>
-    <!--search area-->
-    <div>
-        <div>
-            <!--holds the search box-->
-            <div class="search-box">
-                <!---location to search for-->
-                <input type="text" placeholder="enter location">
-                <!--submission button-->
-                <button class="search-btn">search</button>
-            </div>
-            <!--holds the search results for today-->
-            <div id="today-weather">
-                <h2 id="location"></h2>
-                <div id="temperature"></div>
-                <div id="humidity"></div>
-                <div id="wind"></div>
-                <div id="uv"></div>
-            </div>
+  
+  
+    <main class="justify-content-center">
+      <div class="container-sm d-flex justify-content-center">
+        <div class="card bg-secondary bg-opacity-50 justify-content-center" style="width: 36rem;">
+          <h3 class="card-title text-center">enter location</h3>
+          <form id="location-form" class="card-body justify-content-center">
+            <input name="location" id="location" type="text" autofocus="true" class="form-input justify-content-center" />
+            <button type="submit" class="btn btn-secondary justify-content-center">search</button>
+          </form>
         </div>
-    </div>
+  
+        
+      </div>
+  
+      <div class="col-12 col-md-8">
+        <h2 class="subtitle"><span id="location-search"></span></h2>
+        <div id="weather-container" class="list-group">
+  
+        </div>
+      </div>
+    </main>
+  
+    <script src="./assets/js/script.js"></script>
+  </body>
 
-
-    <script src="./assets/js/homepage.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-title {
+h1 {
   font-family: "Bitter";
   font-style: normal;
   font-weight: 300;
@@ -7,4 +7,26 @@ title {
     format("woff");
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  color: white;
+  padding: 70px;
+  font-size: 100px;
+}
+
+h3 {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bitter/v25/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8ajfOLbOW3pzveS5B3Nd.woff)
+    format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  color: white;
+  padding-top: 15px;
+  font-size: 24px;
+}
+
+body {
+  background-image: url("../images/sunny-sky.png");
+  text: white;
 }
