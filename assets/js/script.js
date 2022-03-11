@@ -1,22 +1,39 @@
-var getWeather = function(user) {
-    // format the github api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}" + city + "/current";
-  
-    // make a get request to url
-    fetch(apiUrl)
-      .then(function(response) {
-        // request was successful
-        if (response.ok) {
-          console.log(response);
-          response.json().then(function(data) {
-            console.log(data);
-            displayWeather(data, user);
-          });
-        } else {
-          alert("Error: " + response.statusText);
-        }
-      })
-      .catch(function(error) {
-        alert("unable to provide weather");
-      });
-  };
+var locationFormEl = document.querySelector("#location-form");
+var searchButton = document.querySelector("#search-btn");
+var locationInputEl = document.querySelector("#location");
+var apiKey = "17af785016eb9522994d1ece0b4fd082";
+
+
+//search weather button
+var formSubmitHandler = function(event) {
+    var  location = locationInputEl.ariaValueMax.trim();
+    
+    if (location) {
+        getWeather(location);
+
+        //clear old content
+        weatherContainerEl.textContent = "";
+        locationInputEl.value = "";
+    } else {
+        alert("please enter a valid location");
+    }
+};
+
+var buttonClickHandler = function(event) {
+    var location = event.target.getAttribute("#location");
+
+    if (location) {
+        getWeather(location);
+        locationFormEl.textContent = "";
+    }
+};
+
+//get weather
+function getWeather(location) {
+    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q" + location + apiKey;
+    fetch(queryUrl).then(function(response) {
+        return response.json();
+    }); response.json().then(function(data) {
+        displayWeather (data);
+    }) .then(console.log(location));
+};
